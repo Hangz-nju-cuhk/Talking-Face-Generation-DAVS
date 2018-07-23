@@ -1,7 +1,7 @@
 # Talking Face Generation by Adversarially Disentangled Audio-Visual Representation
 
-We propose Disentangled Audio-Visual System (DAVS) to address talking face generation in this work, which aims to synthesize a sequence of face images
-that correspond to given speech semantics, conditioning on either a speech audio or video.
+We propose `Disentangled Audio-Visual System (DAVS)` to address arbitrary-subject talking face generation in this work, which aims to synthesize a sequence of face images
+that correspond to given speech semantics, conditioning on either an unconstrained speech audio or video.
 
 [[Project]](https://liuziwei7.github.io/projects/TalkingFace) [[Paper]](https://arxiv.org/abs/1807.07860) [[Demo]](https://www.youtube.com/watch?v=-J2zANwdjcQ)
 
