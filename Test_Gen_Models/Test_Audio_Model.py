@@ -29,7 +29,7 @@ class GenModel():
 
         self.ID_encoder = XDnet.XDnet(opt)
 
-        self.Decoder = Decoder_network.XDnetDecoder(opt)
+        self.Decoder = Decoder_network.Decoder(opt)
 
         self.mfcc_encoder = mfcc_networks.mfcc_encoder_two(opt)
 
