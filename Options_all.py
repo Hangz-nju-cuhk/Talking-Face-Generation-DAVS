@@ -40,6 +40,7 @@ class BaseOptions():
                                  help='# of iter to linearly decay learning rate to zero')
 
         self.parser.add_argument('--num_epochs', type=bool, default=True, help='# of epochs to run')
+        self.parser.add_argument('--start_epoch', type=int, default=1, help='start epoch')
         self.parser.add_argument('--mul_gpu', type=bool, default=True, help='whether to use mul gpus')
         self.parser.add_argument('--cuda_on', type=bool, default=True, help='whether to use mul gpus')
         ################********************** Loss settings **************############################
