@@ -9,14 +9,16 @@ class BaseOptions():
     def initialize(self):
         ################******************** test settings ***************###########################
 
-        self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
         self.parser.add_argument('--test_root', default='./demo_test_data/0572_0019_0003/video',
                                  help='path to videos or audios')
+        self.parser.add_argument('--test_A_path', default='./demo_images',
+                                 help='path input images')
         self.parser.add_argument('--test_resume_path', default='./checkpoints/405_final_model_6I_checkpoint.pth.tar',
                                  help='path to test resume models')
         self.parser.add_argument('--test_audio_video_length', type=int, default=163, help='# of files in the audio folder')
         self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
         self.parser.add_argument('--test_num', type=int, default=1, help='name of the result folder')
+        self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
 
         ################******************** project settings ***************###########################
 
@@ -35,9 +37,9 @@ class BaseOptions():
         self.parser.add_argument('--disfc_length', type=int, default=20, help='# of frames sending into the discriminate fc')
         self.parser.add_argument('--mul_gpu', type=bool, default=True, help='whether to use mul gpus')
         self.parser.add_argument('--cuda_on', type=bool, default=True, help='whether to use gpu')
-        
+
         ################******************** training settings ***************###########################
-        
+
         self.parser.add_argument('--dataroot', type=str,
                                  help='path to training data (should have subfolders test, train, val)')
         self.parser.add_argument('--resume', type=bool, default=True, help='load pretrained model or not')
@@ -62,9 +64,9 @@ class BaseOptions():
         self.parser.add_argument('--lambda_CE', type=float, default=1, help='parameter for pid to wid cross entropy loss')
         self.parser.add_argument('--lambda_CE_inv', type=float, default=1000000, help='parameter for pid to wid inverse cross entropy loss')
         self.parser.add_argument('--L2margin', type=float, default=1, help='margin for the l2 contrastive loss')
-        
+
         ################******************** visdom settings ***************###########################
-        
+
         self.parser.add_argument('--isTrain', type=bool, default=False, help='whether is training status')
         self.parser.add_argument('--display_id', type=int, default=1, help='window id of the web display')
         self.parser.add_argument('--display_port', type=int, default=8097, help='visdom port of the web display')
