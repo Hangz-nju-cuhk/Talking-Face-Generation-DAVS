@@ -17,7 +17,7 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
 ``` 
 
-* Samples for testing can be found in this [folder](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa).This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
+* Samples for testing can be found in this [folder](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa). This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
 
 * Run the testing script for generation from video:
 
