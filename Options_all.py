@@ -7,7 +7,18 @@ class BaseOptions():
         self.initialized = False
 
     def initialize(self):
+        ################******************** test settings ***************###########################
 
+        self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
+        self.parser.add_argument('--test_root', default='./demo_test_data/0572_0019_0003/video',
+                                 help='path to videos or audios')
+        self.parser.add_argument('--test_resume_path', default='./checkpoints/405_final_model_6I_checkpoint.pth.tar',
+                                 help='path to test resume models')
+        self.parser.add_argument('--test_audio_video_length', type=int, default=163, help='# of files in the audio folder')
+        self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
+        self.parser.add_argument('--test_num', type=int, default=1, help='name of the result folder')
+
+        ################******************** training settings ***************###########################
         self.parser.add_argument('--dataroot', type=str,
                                  help='path to training data (should have subfolders test, train, val)')
         self.parser.add_argument('--name', type=str, default='Speech_reco', help='The name of the model')
@@ -60,16 +71,7 @@ class BaseOptions():
         self.parser.add_argument('--display_winsize', type=int, default=256, help='display window size')
         self.parser.add_argument('--display_single_pane_ncols', type=int, default=0,
                                  help='if positive, display all images in a single visdom web panel with certain number of images per row.')
-        ################******************** test settings ***************###########################
 
-        self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
-        self.parser.add_argument('--test_root', default='./demo_test_data/0572_0019_0003/video',
-                                 help='path to videos or audios')
-        self.parser.add_argument('--test_resume_path', default='./checkpoints/405_final_model_6I_checkpoint.pth.tar',
-                                 help='path to test resume models')
-        self.parser.add_argument('--test_audio_video_length', type=int, default=163, help='# of files in the audio folder')
-        self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
-        self.parser.add_argument('--test_num', type=int, default=6, help='name of the result folder')
 
 
         self.initialized = True
