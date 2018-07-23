@@ -4,8 +4,6 @@ import ntpath
 import time
 from . import util
 from . import html
-import Options
-opt = Options.Config()
 
 
 class Visualizer():
