@@ -9,7 +9,7 @@ from collections import OrderedDict
 import torch
 from torch.autograd import Variable
 import network.FAN_feature_extractor as FAN_feature_extractor
-import network.XDnet as XDnet
+import network.IdentityEncoder as IdentityEncoder
 import network.mfcc_networks as mfcc_networks
 import network.Decoder_networks as Decoder_network
 import util.util as util
@@ -26,7 +26,7 @@ class GenModel():
         self.input_B = self.Tensor(opt.batchSize, opt.test_audio_video_length, opt.image_channel_size,
                                    opt.image_size, opt.image_size)
 
-        self.ID_encoder = XDnet.XDnet(opt)
+        self.ID_encoder = IdentityEncoder.IdentityEncoder(opt)
 
         self.Decoder = Decoder_network.Decoder(opt)
 
