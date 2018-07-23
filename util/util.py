@@ -5,19 +5,10 @@ from PIL import Image
 import inspect, re
 import torch.nn as nn
 import os
-import shutil
+from Options_all import BaseOptions
 import collections
-import cv2
-import Options
-config = Options.Config()
+config = BaseOptions().parse()
 
-
-def get_avg_face(config=config):
-    avg_face_align = cv2.imread(os.path.join(config.main_PATH, 'avg_face_align.jpg'))
-    avg_face_align = cv2.cvtColor(avg_face_align[2:226, 2:226, :], cv2.COLOR_BGR2RGB)
-    return avg_face_align
-# Converts a Tensor into a Numpy array
-# |imtype|: the desired type of the converted numpy array
 
 def tensor2im(image_tensor, imtype=np.uint8):
     image_numpy = image_tensor[0].cpu().float().numpy()
@@ -95,8 +86,6 @@ def mkdir(path):
 
 def save_checkpoint(state, epoch, filename=config.name + '_checkpoint.pth.tar', step=0):
     torch.save(state, os.path.join(config.checkpoints_dir, str(epoch) + "_" + str(step) + "_" + filename))
-    # if is_best:
-    #     shutil.copyfile(str(epoch) + "_" + filename, 'synthesis_model_best.pth.tar')
 
 
 def copy_state_dict(state_dict, model, strip=None):
@@ -136,30 +125,15 @@ def load_checkpoint(resume_path, Model):
         Model.netD = copy_state_dict(checkpoint['netD'], Model.netD)
         Model.netD_mul = copy_state_dict(checkpoint['netD_mul'], Model.netD_mul)
         Model.ID_lip_discriminator = copy_state_dict(checkpoint['ID_lip_discriminator'], Model.ID_lip_discriminator)
-        # Model.face_id_fc = copy_state_dict(checkpoint['face_id_fc'], Model.face_id_fc)
-        # Model.discriminator_audio = copy_state_dict(checkpoint['discriminator_audio'], Model.discriminator_audio)
         Model.model_fusion = copy_state_dict(checkpoint['model_fusion'], Model.model_fusion)
-        #LipModel.netD_s = copy_state_dict(checkpoint['netD_s'], LipModel.netD_s)
-        # Model.optimizer_D.load_state_dict(checkpoint['optimizer_D'])
-        # Model.optimizer_G.load_state_dict(checkpoint['optimizer_G'])
+        Model.optimizer_D.load_state_dict(checkpoint['optimizer_D'])
+        Model.optimizer_G.load_state_dict(checkpoint['optimizer_G'])
         print("=> loaded checkpoint '{}' (step {})"
               .format(resume_path, checkpoint['step']))
         return Model, total_steps, epoch
     else:
         print("=> no checkpoint found at '{}'".format(resume_path))
 
-def loadVAE_checkpoint(epoch, resume_path, LipModel):
-    resume_path = resume_path
-    if os.path.isfile(resume_path):
-        print("=> loading checkpoint '{}'".format(resume_path))
-        checkpoint = torch.load(resume_path)
-        LipModel.mfcc_encoder = copy_state_dict(checkpoint['mfcc_encoder'], LipModel.mfcc_encoder)
-        LipModel.mfcc_decoder = copy_state_dict(checkpoint['mfcc_decoder'], LipModel.mfcc_decoder)
-        print("=> loaded checkpoint '{}' (step {})"
-              .format(resume_path, checkpoint['step']))
-        return LipModel
-    else:
-        print("=> no checkpoint found at '{}'".format(resume_path))
 
 
 def load_separately(opt, Model):
@@ -171,7 +145,6 @@ def load_separately(opt, Model):
     Model.lip_feature_encoder = copy_state_dict(feature_extractor_check['face_encoder'], Model.lip_feature_encoder)
     Model.mfcc_encoder = copy_state_dict(feature_extractor_check['mfcc_encoder'], Model.mfcc_encoder)
     Model.model_fusion = copy_state_dict(feature_extractor_check['face_fusion'], Model.model_fusion)
-    # Model.ID_lip_discriminator = copy_state_dict(feature_extractor_check['ID_lip_discriminator'], Model.ID_lip_discriminator)
     return Model
 
 
