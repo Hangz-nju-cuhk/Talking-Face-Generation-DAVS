@@ -8,12 +8,25 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 <img src='./misc/teaser.png' width=880>
 
 ## Requirements
-* [PyTorch](https://pytorch.org/)
+* [PyTorch](https://pytorch.org/) 0.2.0
+* [Opencv2](https://pytorch.org/)
 
 ## Getting started
-* Run the testing script:
+* Download the pre-trained model [checkpoint](https://drive.google.com/file/d/1WltJlIWhG0xT-HSAFUh19F5yEkIfEW5m/view?usp=sharing)
 ``` bash
-python test_all.py
+Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
+``` 
+
+* Samples for testing can be found in this [folder](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa).This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
+
+* Run the testing script for generation from video:
+
+``` bash
+python test_all.py  --test_root './0572_0019_0003/video' --test_type 'video' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+```
+* Run the testing script for generation from audio:
+``` bash
+python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
 
 ## Sample Results
