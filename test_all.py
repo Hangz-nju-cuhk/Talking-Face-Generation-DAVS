@@ -29,7 +29,7 @@ visualizer = Visualizer(opt)
 path_name = ntpath.basename(opt.test_resume_path)[:-19]
 web_dir = os.path.join(opt.results_dir, path_name, '%s_%s' % ('test', start_epoch))
 for i in test_nums:
-    A_path = './demo_images/test_sample' + str(i) + '.jpg'
+    A_path = os.path.join(opt.test_A_path, '/test_sample' + str(i) + '.jpg')
     test_folder = Test_VideoFolder(root=opt.test_root, A_path=A_path, config=opt)
     test_dataloader = DataLoader(test_folder, batch_size=1,
                                 shuffle=False, num_workers=1)
