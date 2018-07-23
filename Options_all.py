@@ -9,13 +9,13 @@ class BaseOptions():
     def initialize(self):
         ################******************** test settings ***************###########################
 
-        self.parser.add_argument('--test_root', default='./demo_test_data/0572_0019_0003/video',
+        self.parser.add_argument('--test_root', default='./0572_0019_0003/video',
                                  help='path to videos or audios')
         self.parser.add_argument('--test_A_path', default='./demo_images',
                                  help='path input images')
-        self.parser.add_argument('--test_resume_path', default='./checkpoints/405_final_model_6I_checkpoint.pth.tar',
+        self.parser.add_argument('--test_resume_path', default='./checkpoints/100_DAVS_checkpoint.pth.tar',
                                  help='path to test resume models')
-        self.parser.add_argument('--test_audio_video_length', type=int, default=163, help='# of files in the audio folder')
+        self.parser.add_argument('--test_audio_video_length', type=int, default=99, help='# of files in the audio folder')
         self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
         self.parser.add_argument('--test_num', type=int, default=1, help='name of the result folder')
         self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
