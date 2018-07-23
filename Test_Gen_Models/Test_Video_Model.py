@@ -8,14 +8,12 @@ from collections import OrderedDict
 
 import torch
 from torch.autograd import Variable
-import Options
 import network.FAN_feature_extractor as FAN_feature_extractor
 import network.XDnet as XDnet
 import network.mfcc_networks as mfcc_networks
 import network.Decoder_networks as Decoder_network
 import util.util as util
 
-opt = Options.Config()
 
 
 class GenModel():
