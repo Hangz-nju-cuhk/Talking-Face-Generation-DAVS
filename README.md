@@ -38,7 +38,7 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 
 ## Create more samples
 
-The face detection and alignment tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
+The face detection tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
 
 With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
 
