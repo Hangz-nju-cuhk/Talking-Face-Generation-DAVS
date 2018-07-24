@@ -23,10 +23,10 @@ class Visualizer():
             self.img_dir = os.path.join(self.web_dir, 'images')
             print('create web directory %s...' % self.web_dir)
             util.mkdirs([self.web_dir, self.img_dir])
-        self.log_name = os.path.join(opt.checkpoints_dir, opt.name, 'loss_log.txt')
-        with open(self.log_name, "a") as log_file:
-            now = time.strftime("%c")
-            log_file.write('================ Training Loss (%s) ================\n' % now)
+            self.log_name = os.path.join(opt.checkpoints_dir, opt.name, 'loss_log.txt')
+            with open(self.log_name, "a") as log_file:
+                now = time.strftime("%c")
+                log_file.write('================ Training Loss (%s) ================\n' % now)
 
     # |visuals|: dictionary of images to display or save
     def display_current_results(self, visuals, epoch, step=0):

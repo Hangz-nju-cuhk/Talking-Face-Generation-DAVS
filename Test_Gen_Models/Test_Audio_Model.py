@@ -65,8 +65,7 @@ class GenModel():
 
         self.optimizer_G_test = torch.optim.Adam(
             list(self.ID_encoder.parameters()) +
-            list(self.Decoder.parameters()) +
-            list(self.mfcc_encoder.parameters()),
+            list(self.Decoder.parameters()),
             lr=self.opt.lr, betas=(self.opt.beta1, 0.999))
 
     def test_train(self):

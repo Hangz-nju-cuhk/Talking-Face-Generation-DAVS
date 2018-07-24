@@ -159,7 +159,6 @@ def load_test_checkpoint(resume_path, Model):
         Model.Decoder = copy_state_dict(checkpoint['Decoder'], Model.Decoder)
         Model.mfcc_encoder = copy_state_dict(checkpoint['mfcc_encoder'], Model.mfcc_encoder)
         Model.lip_feature_encoder = copy_state_dict(checkpoint['lip_feature_encoder'], Model.lip_feature_encoder)
-        # Model.model_fusion = copy_state_dict(checkpoint['model_fusion'], Model.model_fusion)
 
         print("=> loaded checkpoint '{}' (step {})"
               .format(resume_path, checkpoint['step']))
