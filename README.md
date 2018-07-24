@@ -17,14 +17,14 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
 ``` 
 
-* Samples for testing can be found in this [folder](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa). This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
+* Samples for testing can be found in this folder named [0572_0019_0003](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa). This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
 
-* Run the testing script for generation from video:
+* Run the testing script to generate videos from video:
 
 ``` bash
 python test_all.py  --test_root './0572_0019_0003/video' --test_type 'video' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
-* Run the testing script for generation from audio:
+* Run the testing script to generate videos from audio:
 ``` bash
 python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
@@ -47,6 +47,11 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
   year={2018}
 }
 ```
+## How to create more samples
+
+The face detection and alignment tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
+
+With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
 
 ## Acknowledgement
 The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
