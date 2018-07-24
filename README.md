@@ -36,6 +36,12 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 * Talking Effect on Non-human Characters (Trained on Human Faces Only)
 <img src='./misc/demo_nonhuman.gif' width=640>
 
+## Create more samples
+
+The face detection and alignment tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
+
+With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
+
 ## License and Citation
 The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
 
@@ -47,11 +53,6 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
   year={2018}
 }
 ```
-## How to create more samples
-
-The face detection and alignment tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
-
-With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
 
 ## Acknowledgement
 The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
