@@ -8,7 +8,7 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 <img src='./misc/teaser.png' width=880>
 
 ## Requirements
-* [python2.7](https://www.python.org/download/releases/2.7/)
+* [python 2.7](https://www.python.org/download/releases/2.7/)
 * [PyTorch](https://pytorch.org/) < 0.4.0
 * [opencv2](https://opencv.org/releases.html)
 
