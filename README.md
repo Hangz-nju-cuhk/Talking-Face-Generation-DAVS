@@ -55,4 +55,4 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
 ```
 
 ## Acknowledgement
-The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
