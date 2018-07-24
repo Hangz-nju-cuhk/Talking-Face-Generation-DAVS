@@ -38,9 +38,7 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 
 ## Create more samples
 
-* The face detection tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. 
-
-With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
+* The face detection tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
 
 * Our preprocessing of the audio files is the same and borrowed from the matlab code of [SyncNet](http://www.robots.ox.ac.uk/~vgg/software/lipsync/). Then we save the mfcc features into bin files.
 
