@@ -12,7 +12,7 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 * [PyTorch](https://pytorch.org/) < 0.4.0
 * [opencv2](https://opencv.org/releases.html)
 
-## Getting started
+## Generating test results
 * Download the pre-trained model [checkpoint](https://drive.google.com/file/d/1WltJlIWhG0xT-HSAFUh19F5yEkIfEW5m/view?usp=sharing)
 ``` bash
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
@@ -42,6 +42,14 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 * The face detection tool used in the demo videos can be found at [RSA](https://github.com/sciencefans/RSA-for-object-detection). It will return a Matfile with 5 key point locations in a row for each image. The key points for face alignement we used are the two for the eyes and the average point of the corners of the mouth. With each image's PATH and the face POINTS, you can find our way of face alignment at `preprocess/face_align.py`.
 
 * Our preprocessing of the audio files is the same and borrowed from the matlab code of [SyncNet](http://www.robots.ox.ac.uk/~vgg/software/lipsync/). Then we save the mfcc features into bin files.
+
+## Training code
+
+* Training code is preparing and will be released later.
+
+## Postprocessing Details （Optional）
+
+* The directly generated results may suffer from a "zoom-in-and-out" condition which we assume is caused by our alignment of the training set. We solve the unstable problem using [Subspace Video Stabilization](http://web.cecs.pdx.edu/~fliu/papers/tog2010.pdf) in the demos.
 
 ## License and Citation
 The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
