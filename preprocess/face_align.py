@@ -11,9 +11,9 @@ import scipy.io as scio
 
 
 def transformation_from_points(points1, scale):
-    points = [[70.7450, 112.0000],
-              [108.2370, 112.0000],
-              [89.4324,  153.5140]]
+    points = [[70, 112],
+              [110, 112],
+              [90,  152]]
     points2 = np.array(points) * scale
     points2 = points2.astype(np.float64)
     points1 = points1.astype(np.float64)
