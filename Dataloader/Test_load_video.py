@@ -67,6 +67,7 @@ class Test_VideoFolder(Dataset):
         self.loader = loader
         self.config = config
         self.mode = mode
+        self.vid = self.loader(self.root, self.A_path,  config=self.config)
 
     def __getitem__(self, index):
         """
@@ -76,11 +77,11 @@ class Test_VideoFolder(Dataset):
             tuple: (image, target) where target is class_index of the target class.
         """
         loader = {}
-        vid = self.loader(self.root, self.A_path,  config=self.config)
-        loader['A'] = vid['A']
-        loader['B'] = vid['B'][index:index + self.config.sequence_length, :, :, :]
+
+        loader['A'] = self.vid['A']
+        loader['B'] = self.vid['B'][index:index + self.config.sequence_length, :, :, :]
         loader['A_path'] = self.A_path
-        loader['B_path'] = vid['B_path'][index:self.config.sequence_length + index]
+        loader['B_path'] = self.vid['B_path'][index:self.config.sequence_length + index]
         return loader
 
     def __len__(self):
