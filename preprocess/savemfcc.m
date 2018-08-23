@@ -1,4 +1,4 @@
-function savemfcc(file_name)
+function savemfcc(file_name, save_dir)
         opt.fs = 16000;
         opt.Tw = 25;
         opt.Ts = 10;
