@@ -102,7 +102,7 @@ class Test_VideoFolder(Dataset):
 
         loader['A'] = self.vid['A']
         loader['B_audio'] = self.vid['B_audio'][index:self.config.sequence_length + index, :, :, :]
-        loader['A_path'] = self.self.A_path
+        loader['A_path'] = self.A_path
         return loader
 
     def __len__(self):
