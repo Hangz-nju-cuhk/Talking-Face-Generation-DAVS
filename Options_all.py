@@ -13,7 +13,7 @@ class BaseOptions():
                                  help='path to videos or audios')
         self.parser.add_argument('--test_A_path', default='./demo_images',
                                  help='path input images')
-        self.parser.add_argument('--test_resume_path', default='./checkpoints/100_DAVS_checkpoint.pth.tar',
+        self.parser.add_argument('--test_resume_path', default='./checkpoints/101_DAVS_checkpoint.pth.tar',
                                  help='path to test resume models')
         self.parser.add_argument('--test_audio_video_length', type=int, default=99, help='# of files in the audio folder')
         self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
