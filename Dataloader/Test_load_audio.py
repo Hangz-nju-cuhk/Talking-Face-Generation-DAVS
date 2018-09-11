@@ -7,7 +7,7 @@ from Options_all import BaseOptions
 import cv2
 
 
-def Test_Outside_Loader(path, A_path, config, require_video=False):
+def Test_Outside_Loader(path, A_path, config, require_audio=True, require_video=False):
     loader = {}
     data_length = config.test_audio_video_length
     pair = range(2, 2 + data_length)
@@ -53,7 +53,7 @@ def Test_Outside_Loader(path, A_path, config, require_video=False):
 
                 k1 += 1
 
-        if config.require_audio:
+        if require_audio:
             k4 = 0
             for mfcc_num in pair:
                 # for s in range(-1,2):
