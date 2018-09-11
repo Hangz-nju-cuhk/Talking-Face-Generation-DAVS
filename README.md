@@ -13,7 +13,7 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 * [opencv2](https://opencv.org/releases.html)
 
 ## Generating test results
-* Download the pre-trained model [checkpoint](https://drive.google.com/file/d/1WltJlIWhG0xT-HSAFUh19F5yEkIfEW5m/view?usp=sharing)
+* Download the pre-trained model [checkpoint](https://drive.google.com/open?id=1UW22xm4r9AewNoySyPd2fyUab0nqymBR)
 ``` bash
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
 ``` 
