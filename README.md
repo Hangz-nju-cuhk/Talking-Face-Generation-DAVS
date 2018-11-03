@@ -9,7 +9,7 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 
 ## Requirements
 * [python 2.7](https://www.python.org/download/releases/2.7/)
-* [PyTorch](https://pytorch.org/)，（We use version 0.2.0) 
+* [PyTorch](https://pytorch.org/)（We use version 0.2.0) 
 * [opencv2](https://opencv.org/releases.html)
 
 ## Generating test results
