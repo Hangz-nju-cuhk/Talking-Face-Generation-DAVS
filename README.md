@@ -55,7 +55,7 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
 
 ```
-@inproceedings{zhou2018talking,
+@inproceedings{zhou2019talking,
   title     = {Talking Face Generation by Adversarially Disentangled Audio-Visual Representation},
   author    = {Hang Zhou, Yu Liu, Ziwei Liu, Ping Luo, Xiaogang Wang},
   booktitle = {AAAI},
