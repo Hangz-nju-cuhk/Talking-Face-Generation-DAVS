@@ -57,7 +57,7 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
 ```
 @inproceedings{zhou2019talking,
   title     = {Talking Face Generation by Adversarially Disentangled Audio-Visual Representation},
-  author    = {Zhou, Hang and Liu, Yu and Liu, Ziwei and Luo, Ping and  Wang, Xiaogang},
+  author    = {Zhou, Hang and Liu, Yu and Liu, Ziwei and Luo, Ping and Wang, Xiaogang},
   booktitle = {AAAI},
   year      = {2019},
 }
