@@ -9,11 +9,11 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 
 ## Requirements
 * [python 2.7](https://www.python.org/download/releases/2.7/)
-* [PyTorch](https://pytorch.org/) 
+* [PyTorch](https://pytorch.org/)（We use version 0.2.0) 
 * [opencv2](https://opencv.org/releases.html)
 
 ## Generating test results
-* Download the pre-trained model [checkpoint](https://drive.google.com/file/d/1WltJlIWhG0xT-HSAFUh19F5yEkIfEW5m/view?usp=sharing)
+* Download the pre-trained model [checkpoint](https://drive.google.com/open?id=1UW22xm4r9AewNoySyPd2fyUab0nqymBR)
 ``` bash
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
 ``` 
@@ -55,13 +55,14 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
 
 ```
-@article{zhou2018talking,
-  title={Talking Face Generation by Adversarially Disentangled Audio-Visual Representation},
-  author={Hang Zhou, Yu Liu, Ziwei Liu, Ping Luo, Xiaogang Wang},
-  journal={arXiv preprint arXiv:1807.07860},
-  year={2018}
+@inproceedings{zhou2019talking,
+  title     = {Talking Face Generation by Adversarially Disentangled Audio-Visual Representation},
+  author    = {Zhou, Hang and Liu, Yu and Liu, Ziwei and Luo, Ping and Wang, Xiaogang},
+  booktitle = {AAAI},
+  year      = {2019},
 }
 ```
 
 ## Acknowledgement
 The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
+
