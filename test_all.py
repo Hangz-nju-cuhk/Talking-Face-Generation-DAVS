@@ -8,7 +8,7 @@ import ntpath
 
 opt = BaseOptions().parse()
 
-if opt.test_type == 'video' or 'image':
+if opt.test_type == 'video' or opt.test_type == 'image':
     import Test_Gen_Models.Test_Video_Model as Gen_Model
     from Dataloader.Test_load_video import Test_VideoFolder
 elif opt.test_type == 'audio':

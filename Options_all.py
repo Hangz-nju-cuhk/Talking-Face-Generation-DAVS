@@ -13,7 +13,7 @@ class BaseOptions():
                                  help='path to videos or audios')
         self.parser.add_argument('--test_A_path', default='./demo_images',
                                  help='path input images')
-        self.parser.add_argument('--test_resume_path', default='./checkpoints/100_DAVS_checkpoint.pth.tar',
+        self.parser.add_argument('--test_resume_path', default='./checkpoints/101_DAVS_checkpoint.pth.tar',
                                  help='path to test resume models')
         self.parser.add_argument('--test_audio_video_length', type=int, default=99, help='# of files in the audio folder')
         self.parser.add_argument('--test_type', type=str, default='video', help='type of data in the test root')
@@ -68,7 +68,7 @@ class BaseOptions():
         ################******************** visdom settings ***************###########################
 
         self.parser.add_argument('--isTrain', type=bool, default=False, help='whether is training status')
-        self.parser.add_argument('--display_id', type=int, default=1, help='window id of the web display')
+        self.parser.add_argument('--display_id', type=int, default=0, help='window id of the web display')
         self.parser.add_argument('--display_port', type=int, default=8097, help='visdom port of the web display')
         self.parser.add_argument('--display_winsize', type=int, default=256, help='display window size')
         self.parser.add_argument('--display_single_pane_ncols', type=int, default=0,
