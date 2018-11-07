@@ -23,11 +23,11 @@ Create the default folder "checkpoints" and put the checkpoint in it or get the 
 * Run the testing script to generate videos from video:
 
 ``` bash
-python test_all.py  --test_root './0572_0019_0003/video' --test_type 'video' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/video --test_type video --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
 * Run the testing script to generate videos from audio:
 ``` bash
-python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/audio --test_type audio --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
 
 ## Sample Results
