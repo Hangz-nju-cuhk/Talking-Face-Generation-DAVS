@@ -23,11 +23,11 @@ Create the default folder "checkpoints" and put the checkpoint in it or get the 
 * Run the testing script to generate videos from video:
 
 ``` bash
-python test_all.py  --test_root './0572_0019_0003/video' --test_type 'video' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/video --test_type video --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
 * Run the testing script to generate videos from audio:
 ``` bash
-python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/audio --test_type audio --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
 ```
 
 ## Sample Results
@@ -45,9 +45,9 @@ python test_all.py  --test_root './0572_0019_0003/audio' --test_type 'audio' --t
 
 ## Training code
 
-* Training code is preparing and will be released later.
+* Training code is under preparation and will be released soon.
 
-## Postprocessing Details （Optional）
+## Postprocessing Details (Optional)
 
 * The directly generated results may suffer from a "zoom-in-and-out" condition which we assume is caused by our alignment of the training set. We solve the unstable problem using [Subspace Video Stabilization](http://web.cecs.pdx.edu/~fliu/papers/tog2010.pdf) in the demos.
 
@@ -64,5 +64,5 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
 ```
 
 ## Acknowledgement
-The structure of this code is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
+The structure of this codebase is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
 
