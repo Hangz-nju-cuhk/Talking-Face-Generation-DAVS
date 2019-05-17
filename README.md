@@ -63,7 +63,7 @@ where each video is extracted to frames and aligned using our protocol, and each
 ```bash
 python train.py
 ```
-* This is still a beta version of the training code with which only disentangles wid information from pid space. Might not be able to fully reproduce the paper. However, it can be served as a reference for how we implement the whole training process.
+* This is still a beta version of the training code which only disentangles wid information from pid space. Running the train.py only might not be able to fully reproduce the paper. However, it can be served as a reference for how we implement the whole training process.
 * During our own implementation, the classification part (without generation and disentanglement) is pretrained first. The pretraining training code is temporarily not provided.
  
 
@@ -85,3 +85,4 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
 
 ## Acknowledgement
 The structure of this codebase is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
+
