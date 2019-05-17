@@ -9,25 +9,25 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 
 ## Requirements
 * [python 2.7](https://www.python.org/download/releases/2.7/)
-* [PyTorch](https://pytorch.org/)（We use version 0.2.0) 
+* [PyTorch](https://pytorch.org/)（We use version 0.2.0)
 * [opencv2](https://opencv.org/releases.html)
 
 ## Generating test results
 * Download the pre-trained model [checkpoint](https://drive.google.com/open?id=1UW22xm4r9AewNoySyPd2fyUab0nqymBR)
 ``` bash
 Create the default folder "checkpoints" and put the checkpoint in it or get the CHECKPOINT_PATH
-``` 
+```
 
-* Samples for testing can be found in this folder named [0572_0019_0003](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa). This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset. 
+* Samples for testing can be found in this folder named [0572_0019_0003](https://drive.google.com/open?id=1ykjOZwwFfyP2V1vdUVsm2v4r1QSM-uxa). This is a pre-processed sample from the [Voxceleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) Dataset.
 
 * Run the testing script to generate videos from video:
 
 ``` bash
-python test_all.py  --test_root ./0572_0019_0003/video --test_type video --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/video --test_type video --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH
 ```
 * Run the testing script to generate videos from audio:
 ``` bash
-python test_all.py  --test_root ./0572_0019_0003/audio --test_type audio --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH 
+python test_all.py  --test_root ./0572_0019_0003/audio --test_type audio --test_audio_video_length 99 --test_resume_path CHECKPOINT_PATH
 ```
 
 ## Sample Results
@@ -43,9 +43,29 @@ python test_all.py  --test_root ./0572_0019_0003/audio --test_type audio --test_
 
 * Our preprocessing of the audio files is the same and borrowed from the matlab code of [SyncNet](http://www.robots.ox.ac.uk/~vgg/software/lipsync/). Then we save the mfcc features into bin files.
 
-## Training code
 
-* Training code is under preparation and will be released soon.
+## Preparing Training Data
+* We used the [LRW](http://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrw1.html) dataset for training.
+* The directories are arranged like this:
+```
+data
+├── train, val, test
+|	├── 0, 1, 2 ... 499 (one folder for each class)
+|	│   ├── 0, 1, 2 ... #videos per class
+|	│   │   ├── align_face256
+|	│   │   |   ├── 0, 1, ... 28.jpg
+|	│   |   ├── mfcc20
+|	│   │   |   ├── 2, 3 ... 26.bin
+```
+where each video is extracted to frames and aligned using our protocol, and each audio is processed and saved using Matlab.
+
+## Training 
+```bash
+python train.py
+```
+* This is still a beta version of the training code with which only disentangles wid information from pid space. Might not be able to fully reproduce the paper. However, it can be served as a reference for how we implement the whole training process.
+* During our own implementation, the classification part (without generation and disentanglement) is pretrained first. The pretraining training code is temporarily not provided.
+ 
 
 ## Postprocessing Details (Optional)
 
@@ -65,4 +85,3 @@ The use of this software is RESTRICTED to **non-commercial research and educatio
 
 ## Acknowledgement
 The structure of this codebase is borrowed from [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
-
