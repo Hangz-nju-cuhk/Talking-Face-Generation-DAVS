@@ -54,35 +54,6 @@ def find_three_points(face_points):
     return three_points
 
 
-def transformation_from_points(points1):
-    points = [[101.19, 97.79],
-              [155.24, 97.53],
-              [101.19, 97.79],
-              [155.24, 97.53],
-              [126.75, 127.71]]
-              # [105.267,   156.047],
-              # [149.827,   155.137]]
-    points2 = np.array(points)
-    points2 = points2.astype(np.float64)
-    points1 = points1.astype(np.float64)
-
-    c1 = np.mean(points1, axis=0)
-    c2 = np.mean(points2, axis=0)
-    points1 -= c1
-    points2 -= c2
-
-    s1 = np.std(points1)
-    s2 = np.std(points2)
-    points1 /= s1
-    points2 /= s2
-
-    U, S, Vt = np.linalg.svd(np.matmul(points1.T, points2))
-    R = (np.matmul(U, Vt)).T
-    sR = (s2 / s1) * R
-    T = c2.reshape(2,1) - (s2 / s1) * np.matmul(R, c1.reshape(2,1))
-    M = np.concatenate((sR, T), axis=1)
-    return M
-
 class ImageLoader256(object):
     def __init__(self, face_points, mode='train'):
         self.scale = 2
