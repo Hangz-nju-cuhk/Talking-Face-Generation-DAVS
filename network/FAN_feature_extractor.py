@@ -186,5 +186,5 @@ class FanFusion(nn.Module):
     def forward(self, x):
         x0 = x.view(-1, self.opt.image_channel_size, self.opt.image_size, self.opt.image_size)
         net = self._forward(x0)
-        net = net.view(x0.size(0), -1, 256)
+        net = net.view(x.size(0), -1, 256)
         return net
