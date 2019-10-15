@@ -84,7 +84,6 @@ class GenModel():
         self.L2Contrastive = loss_functions.L2ContrastiveLoss(margin=opt.L2margin)
         self.criterionCE = torch.nn.CrossEntropyLoss()
         self.inv_dis_loss = loss_functions.L2SoftmaxLoss()
-        self.Contrastive = loss_functions.ContrastiveLoss(margin=opt.ranking_margin)
 
 
         # initialize optimizers
@@ -124,7 +123,6 @@ class GenModel():
                 self.criterionL2.cuda()
                 self.criterionCE.cuda()
                 self.inv_dis_loss.cuda()
-                self.Contrastive.cuda()
                 self.model_fusion.cuda()
                 self.discriminator_audio.cuda()
                 self.L2Contrastive.cuda()
