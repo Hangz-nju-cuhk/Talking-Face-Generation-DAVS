@@ -64,7 +64,7 @@ class GenModel():
         self.model_fusion = networks.ModelFusion(opt)
 
         # discriminator for adv in embedding wid
-        self.discriminator_audio = networks.discriminator_audio(opt)
+        self.discriminator_audio = networks.discriminator_audio()
 
         use_sigmoid = opt.no_lsgan
         self.netD = Discriminator_networks.Discriminator(input_nc=3, use_sigmoid=use_sigmoid)
