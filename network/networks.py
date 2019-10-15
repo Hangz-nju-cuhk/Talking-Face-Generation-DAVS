@@ -38,13 +38,14 @@ class ModelFusion(nn.Module):
         self.fc_2 = nn.Linear(512, config.label_size)
         self.relu = nn.ReLU(True)
         self.sig = nn.Sigmoid()
+        self.config = config
         self.dis = nn.Linear(512, 1)
         if not config.resume:
             self.fc_1.weight.data.normal_(0, 0.0001)
             self.fc_1.bias.data.zero_()
 
     def forward(self, x):
-        x = x.view(-1, config.pred_length * 256)
+        x = x.view(-1, self.config.pred_length * 256)
         net = self.fc_1(x)
         net0 = self.relu(net)
         net = self.fc_2(net0)
