@@ -41,7 +41,7 @@ class Config():
 
         ################******************** training settings ***************###########################
 
-        self.parser.add_argument('main_PATH', type=str, default="data", help='path to datasets main path')
+        self.parser.add_argument('--main_PATH', type=str, default="data", help='path to datasets main path')
         self.parser.add_argument('--resume', type=bool, default=True, help='load pretrained model or not')
         self.parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='where to save the checkpoints')
         self.parser.add_argument('--save_latest_freq', type=int, default=1000, help='how many steps to save the latest model')
