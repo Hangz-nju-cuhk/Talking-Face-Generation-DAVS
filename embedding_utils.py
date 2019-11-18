@@ -6,8 +6,8 @@ import os
 import shutil
 from sklearn.metrics.pairwise import euclidean_distances
 import torch.nn.functional as F
-import Options
-config = Options.Config()
+from Options import Config
+config = Config().parse()
 
 
 def to_np(x):
