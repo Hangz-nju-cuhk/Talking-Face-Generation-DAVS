@@ -96,6 +96,7 @@ class SumLogSoftmaxLoss(nn.Module):
         out = self.logsoftmax(x)
         loss = - torch.mean(out)
         return loss
+
 class L2SoftmaxLoss(nn.Module):
     def __init__(self, opt=opt):
         super(L2SoftmaxLoss, self).__init__()
