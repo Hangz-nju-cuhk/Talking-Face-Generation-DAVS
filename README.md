@@ -1,4 +1,4 @@
-# Talking Face Generation by Adversarially Disentangled Audio-Visual Representation
+# Talking Face Generation by Adversarially Disentangled Audio-Visual Representation (AAAI 2019)
 
 We propose `Disentangled Audio-Visual System (DAVS)` to address arbitrary-subject talking face generation in this work, which aims to synthesize a sequence of face images
 that correspond to given speech semantics, conditioning on either an unconstrained speech audio or video.
@@ -6,6 +6,9 @@ that correspond to given speech semantics, conditioning on either an unconstrain
 [[Project]](https://liuziwei7.github.io/projects/TalkingFace) [[Paper]](https://arxiv.org/abs/1807.07860) [[Demo]](https://www.youtube.com/watch?v=-J2zANwdjcQ)
 
 <img src='./misc/teaser.png' width=880>
+
+### Recommondation of our CVPR21 repo
+This repo is barely maintaining since the version of this code is out of date. If you are interested in the topic of Talking Face Generation, feel free to try the [CODE](https://github.com/Hangz-nju-cuhk/Talking-Face_PC-AVS) of our [CVPR2021 PAPER](https://hangz-nju-cuhk.github.io/projects/PC-AVS)!
 
 ## Requirements
 * [python 2.7](https://www.python.org/download/releases/2.7/)
